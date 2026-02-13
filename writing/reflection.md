@@ -50,7 +50,7 @@ Its important to make code readable as it allows other to learn off of and creat
 
 Your Response:
 
-
+Ethical considerations are as such when modifing and using code, you must show consideration to the creator code and you must give credit so that you don't plagerise the creator's code. 
 
 ---
 
