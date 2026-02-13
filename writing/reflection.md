@@ -30,13 +30,13 @@ Through use of the thurpgh to-do messages I created code comments and each of th
 
 Your Response:
 
-TODO
+Using the imported random command it allows the computer to have a randomly generated choice from withing the choicies list. I used the import command to make this work using import random. 
 
 5. What was the most challenging part of refactoring the spaghetti code into a more structured program? How did you overcome this challenge?
 
 Your Response:
 
-TODO
+The most challenging part was repuposing the already written if statment into two seperate functions that worked seperate from each other. 
 
 ## Ethical Reflection Questions
 
@@ -44,13 +44,13 @@ TODO
 
 Your Response:
 
-TODO
+Its important to make code readable as it allows other to learn off of and create more off your own code. As for your responsibilities as a programmer readable code realates as it easies the integration between user and machine. 
 
 2. Consider the use of open source code (like the spaghetti code provided). What are some ethical considerations when using, modifying, or sharing code written by others?
 
 Your Response:
 
-TODO
+
 
 ---
 
