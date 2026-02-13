@@ -95,12 +95,11 @@ def main():
 		user_choice = get_user_choice()
 		computer_choice = get_computer_choice()
 		print_round_result(user_choice, computer_choice)
-		user_score, computer_score = determine_winner(user_score, computer_choice, user_score, computer_score)
+		user_score, computer_score = determine_winner(user_choice, computer_choice, user_score, computer_score)
 		pass
 	console.print(f"Computer final score: {computer_score}")
 	console.print(f"User final score: {user_score}")
 	if user_score > computer_score:
-
 		console.print("[bold green]Congratulations, you win the game![/bold green]")
 	
 
