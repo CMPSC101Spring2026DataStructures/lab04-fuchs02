@@ -1,7 +1,7 @@
 
 # Basic Rock Paper Scissors Game
-# Name: Add Your Name Here
-# Date: Add The Date Here
+# Name: Kallan Fuchs
+# Date: 2/13/2026
 
 import random
 
@@ -35,44 +35,75 @@ console = Console()
 choices = ['rock', 'paper', 'scissors']
 num_to_choice = {'1': 'rock', '2': 'paper', '3': 'scissors'}
 
-# TODO: Implement this function to get and validate the user's choice.
+# Implements this function to get and validate the user's choice.
 def get_user_choice():
 	"""Prompt the user for their choice and return 'rock', 'paper', or 'scissors'."""
-	# TODO: Use console.input and validate input (accept 1/2/3 or words)
-	pass
+	# uses console.input and validate input (accept 1/2/3 or words)
+	user_input = console.input("[bold]Choose rock (1), paper (2), or scissors (3): [/bold]".strip().lower())
+	if user_input in num_to_choice:
+			user_choice = num_to_choice[user_input]
+	else:
+		user_choice = user_input
+	if user_choice in choices:
+		pass
+	else:
+		console.print("[red]Invalid choice. Please try again.[/red]")
+	return user_choice
 
-# TODO: Implement this function to randomly select the computer's choice.
+# Implements this function to randomly select the computer's choice.
 def get_computer_choice():
 	"""Randomly return 'rock', 'paper', or 'scissors'."""
-	pass
+	computer_coice = random.choice(choices)
+	return computer_coice
 
-# TODO: Implement this function to determine the winner of a round.
-def determine_winner(user_choice, computer_choice):
+# Implements this function to determine the winner of a round.
+def determine_winner(user_choice, computer_choice,user_score, computer_score):
 	"""Return 'user', 'computer', or 'tie' based on the choices."""
-	pass
+	if user_choice == computer_choice:
+		return 'tie'
+	elif (
+		(user_choice == 'rock' and computer_choice == 'scissors') or
+		(user_choice == 'paper' and computer_choice == 'rock') or
+		(user_choice == 'scissors' and computer_choice == 'paper')
+	):
+		user_score += 1
+	else:
+		computer_score += 1
+	return user_score, computer_score
 
-# TODO: Implement this function to print the round result with color.
-def print_round_result(user_choice, computer_choice, winner):
+# Implements this function to print the round result with color.
+def print_round_result(user_choice, computer_choice):
 	"""Print the choices and the winner of the round using rich colors."""
-	pass
+	if user_choice == computer_choice:
+		console.print("[blue]It's a tie![/blue]")
+	elif (
+		(user_choice == 'rock' and computer_choice == 'scissors') or
+		(user_choice == 'paper' and computer_choice == 'rock') or
+		(user_choice == 'scissors' and computer_choice == 'paper')
+	):
+		console.print("[bold green]You win this round![/bold green]")
+	else:
+		console.print("[bold red]Computer wins this round![/bold red]")
 
-# TODO: Implement the main game loop.
+# Implements the main game loop.
 def main():
 	"""Main function to run the game for 3 rounds and print the final result."""
 	user_score = 0
 	computer_score = 0
 	rounds = 3
 	for round_num in range(1, rounds + 1):
-		# TODO: Get user and computer choices
-		# TODO: Determine winner
-		# TODO: Print round result
-		# TODO: Update scores
+		user_choice = get_user_choice()
+		computer_choice = get_computer_choice()
+		print_round_result(user_choice, computer_choice)
+		user_score, computer_score = determine_winner(user_score, computer_choice, user_score, computer_score)
 		pass
-	# TODO: Print final scores and announce the overall winner
-	pass
-
-if __name__ == "__main__":
-	main()
+	console.print(f"Computer final score: {computer_score}")
+	console.print(f"User final score: {user_score}")
 	if user_score > computer_score:
 
 		console.print("[bold green]Congratulations, you win the game![/bold green]")
+	
+
+if __name__ == "__main__":
+	main()
+	
