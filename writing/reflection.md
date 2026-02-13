@@ -18,13 +18,13 @@ It alowes for a cleaner and more reusable code. In compleating this lab it allow
 
 Your Response:
 
-Using if and elif statments it ensure the choice is in the listed choices or dictioary and if so it allows the choice pass. If not it prints an error and picks the useres choice. 
+Using if and elif statments it ensure the choice is in the listed choices or dictioary and if so it allows the choice pass. If not it prints an error message and the user losses the round. 
 
 3. How did you use comments and docstrings in your code? Give an example of a helpful comment or docstring you wrote.
 
 Your Response:
 
-TODO
+Through use of the thurpgh to-do messages I created code comments and each of the fucntions had pre sdetermined docstrings making the whole prosses very easy to implement. 
 
 4. Explain how the computer's move is generated in your program. What Python features did you use to accomplish this?
 
