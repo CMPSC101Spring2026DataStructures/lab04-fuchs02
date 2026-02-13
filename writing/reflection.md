@@ -11,14 +11,14 @@ Please answer the following questions after you have completed the programming l
 
 Your Response:
 
-TODO
+It alowes for a cleaner and more reusable code. In compleating this lab it allowed for a a clean main function that consisted of only around 15 line compared to the others hundred somthing lines which held the whole game. 
 
 
 2. Describe how you validated user input in your version of the Rock, Paper, Scissors game. Why is input validation important?
 
 Your Response:
 
-TODO
+Using if and elif statments it ensure the choice is in the listed choices or dictioary and if so it allows the choice pass. If not it prints an error and picks the useres choice. 
 
 3. How did you use comments and docstrings in your code? Give an example of a helpful comment or docstring you wrote.
 
