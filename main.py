@@ -40,7 +40,7 @@ num_to_choice = {'1': 'rock', '2': 'paper', '3': 'scissors', '4':'end'}
 def get_user_choice():
 	"""Prompt the user for their choice and return 'rock', 'paper', or 'scissors'."""
 	# uses console.input and validate input (accept 1/2/3 or words)
-	user_input = console.input("[bold]Choose rock (1), paper (2), scissors (3), end(4): [/bold]".strip().lower())
+	user_input = console.input("[bold]Choose rock 🪨  (1), paper 📄 (2), scissors ✂️  (3), end(4) 🛑 : [/bold]".strip().lower())
 	if user_input in num_to_choice:
 			user_choice = num_to_choice[user_input]
 	else:
