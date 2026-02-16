@@ -4,6 +4,7 @@
 # Date: 2/13/2026
 
 import random
+import pygame
 
 """
 main.py
@@ -60,7 +61,8 @@ def get_computer_choice():
 def determine_winner(user_choice, computer_choice,user_score, computer_score):
 	"""Return 'user', 'computer', or 'tie' based on the choices."""
 	if user_choice == computer_choice:
-		return 'tie'
+		# It's a tie, scores unchanged
+		return user_score, computer_score
 	elif (
 		(user_choice == 'rock' and computer_choice == 'scissors') or
 		(user_choice == 'paper' and computer_choice == 'rock') or
@@ -88,10 +90,10 @@ def print_round_result(user_choice, computer_choice):
 # Implements the main game loop.
 def main():
 	"""Main function to run the game for 3 rounds and print the final result."""
+	pygame.mixer.init()
 	user_score = 0
 	computer_score = 0
 	rounds = 3
-	x = 0
 	# for round_num in range(1, rounds + 1):
 	while True:
 		user_choice = get_user_choice()
@@ -105,6 +107,16 @@ def main():
 	console.print(f"User final score: {user_score}")
 	if user_score > computer_score:
 		console.print("[bold green]Congratulations, you win the game![/bold green]")
+		my_sound = pygame.mixer.Sound(r"C:\Users\kalla\2025-2026\cs101\labs\lab04-fuchs02\Sounds\cheering.mp3")
+		play_obj = my_sound.play()
+		while play_obj.get_busy():
+			pygame.time.wait(100)
+	else:
+		console.print("[bold red]Computer wins, you lost the game![/bold red]")
+		my_sound = pygame.mixer.Sound(r"C:\Users\kalla\2025-2026\cs101\labs\lab04-fuchs02\Sounds\downer_noise.mp3")
+		play_obj = my_sound.play()
+		while play_obj.get_busy():
+			pygame.time.wait(100)
 	
 
 if __name__ == "__main__":
