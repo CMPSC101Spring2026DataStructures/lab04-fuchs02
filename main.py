@@ -32,14 +32,14 @@ from rich.console import Console
 
 console = Console()
 
-choices = ['rock', 'paper', 'scissors']
-num_to_choice = {'1': 'rock', '2': 'paper', '3': 'scissors'}
+choices = ['rock', 'paper', 'scissors', 'end']
+num_to_choice = {'1': 'rock', '2': 'paper', '3': 'scissors', '4':'end'}
 
 # Implements this function to get and validate the user's choice.
 def get_user_choice():
 	"""Prompt the user for their choice and return 'rock', 'paper', or 'scissors'."""
 	# uses console.input and validate input (accept 1/2/3 or words)
-	user_input = console.input("[bold]Choose rock (1), paper (2), or scissors (3): [/bold]".strip().lower())
+	user_input = console.input("[bold]Choose rock (1), paper (2), scissors (3), end(4): [/bold]".strip().lower())
 	if user_input in num_to_choice:
 			user_choice = num_to_choice[user_input]
 	else:
@@ -91,8 +91,12 @@ def main():
 	user_score = 0
 	computer_score = 0
 	rounds = 3
-	for round_num in range(1, rounds + 1):
+	x = 0
+	# for round_num in range(1, rounds + 1):
+	while True:
 		user_choice = get_user_choice()
+		if user_choice == 'end':
+			break
 		computer_choice = get_computer_choice()
 		print_round_result(user_choice, computer_choice)
 		user_score, computer_score = determine_winner(user_choice, computer_choice, user_score, computer_score)
